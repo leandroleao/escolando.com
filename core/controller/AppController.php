@@ -13,8 +13,17 @@ class AppController {
     public $sessionId;
 
     function show($page){
-        $this->page = 'pages/templates/' . THEME_NAME . '/' . $page . '.php';
-        include('pages/templates/'. THEME_NAME .'/MasterPage.php');
+
+        if($_SESSION['escolandoUser']){
+            $this->page = 'pages/templates/' . THEME_NAME . '/' . $page . '.php';
+            include('pages/templates/'. THEME_NAME .'/MasterPage.php');
+        }
+        else{
+            $this->page = 'pages/templates/' . THEME_NAME . '/LoginPage.php';
+            include('pages/templates/'. THEME_NAME .'/MasterPage.php');
+        }
+
+
 
     }
 

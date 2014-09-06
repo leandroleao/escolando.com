@@ -6,7 +6,8 @@ class Url {
     public static $routes = array(
         'contato' => array('ContactController','validForm'),
         'login' => array('LoginController','pageDefault'),
-        'user-login' => array('LoginController','userLogin')
+        'user-login' => array('LoginController','userLogin'),
+        'postAdd' => array('InitPageController','postAdd')
 
     );
 

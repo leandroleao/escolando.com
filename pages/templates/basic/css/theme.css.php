@@ -25,3 +25,5 @@ body{ background-color: #e9eaed; }
 #content.init .nav .groups{ position: absolute; }
 
 #content.init .timeline{ width: 500px; height: 100%; outline: solid 1px yellow; display: inline-block; }
+#content.init .timeline .form{ position:absolute; }
+#content.init .timeline .posts{ position:absolute; color: #555; top: 100px; }

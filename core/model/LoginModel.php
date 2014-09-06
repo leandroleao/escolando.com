@@ -9,12 +9,18 @@
 
 class LoginModel extends BaseModel{
 
-  public $user;
-  public $pass;
 
-    function selectUser($post){
+    function login($post){
 
-      return  $this->select("usuarios","*"," login=:login AND senha=:senha ", $post);
+      $r = $this->select("users","*"," (user=:user AND pwd=:pwd) || (register=:user AND pwd=:pwd) ", $post);
+      return $r;
+
+    }
+
+    function getUser($post){
+
+        $r = $this->select("users","*"," id=:id ", $post);
+        return $r;
 
     }
 

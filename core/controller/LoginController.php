@@ -15,7 +15,16 @@ class LoginController extends AppController {
 
     function userLogin($data, $pars){
 
-        print_r($pars); exit;
+        $userLogin = new LoginModel();
+        $r = $userLogin->login($data);
+
+        if(!empty($r[0])){
+            $_SESSION['escolandoUser'] = $r[0]->id;
+            header("location:".SITE_PATH);
+        }
+        else{
+            header("location:".SITE_PATH."login/ERROR");
+        }
 
 
     }

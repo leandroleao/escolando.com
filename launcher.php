@@ -3,6 +3,7 @@ session_start();
 error_reporting("E-NOTICE");
 require "config.php";
 
+
 //carregamento automático das classes
 function __autoload($strClass){
     //carrega as classes do diretório controller
