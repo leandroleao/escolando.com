@@ -13,7 +13,6 @@
             </span>
         </div>
 
-
     </header>
 
     <nav class="nav">
@@ -61,7 +60,7 @@
     <div class="timeline">
 
         <div class="form">
-            <form action="<?php echo SITE_PATH; ?>postAdd" method="POST">
+            <form action="<?php echo SITE_PATH; ?>postGroupAdd" method="POST">
                 <label class="title">ESCREVA SUA OPNIÃO</label>
                 <textarea placeholder="Compartilhe aqui seu conhecimento" class="postContent" name="postContent"></textarea>
 
@@ -71,7 +70,7 @@
                     </select>
 
                     <input type="hidden" name="author" value="<?php echo $this->user[0]->id;?>">
-                    <input type="hidden" name="groupId" value="1">
+                    <input type="hidden" name="groupId" value="<?php echo $this->group; ?>">
                     <input type="submit" class="button" value="Publicar" />
                 </div>
 

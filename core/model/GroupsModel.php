@@ -11,7 +11,7 @@ class GroupsModel extends BaseModel{
 
     function getGroups($data){
 
-     $r = $this->select(" groups, users_groups"," groups.*"," users_groups.user =".$data." AND users_groups.group = groups.id");
+     $r = $this->select(" groups, users_groups"," groups.*"," users_groups.user =".$data." AND users_groups.group = groups.id AND groups.id != 1");
      return $r;
     }
 

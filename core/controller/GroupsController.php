@@ -7,23 +7,26 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class InitPageController extends AppController {
+class GroupsController extends AppController {
 
     public $user;
     public $groups;
+    public $group;
     public $posts;
 
-    function pageDefault(){
+    function pageDefault($data,$pars){
 
         if($_SESSION['escolandoUser']){
 
+            $this->group = intval($pars['1']) ? $pars['1'] : 1;
+
             $this->user = $this->getUser($_SESSION['escolandoUser']);
             $this->groups = $this->getGroups($_SESSION['escolandoUser']);
-            $this->posts = $this->getPosts("1");
+            $this->posts = $this->getPosts($this->group);
 
         }
 
-        $this->show('InitPage');
+        $this->show('GroupsPage');
     }
 
     function getUser($user){
@@ -82,7 +85,7 @@ class InitPageController extends AppController {
             $r = $insertPost->addPost($arr);
 
 
-            header("location:".SITE_PATH);
+            header("location:".SITE_PATH."groups/".$arr['groupId']);
             exit;
 
 

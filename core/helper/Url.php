@@ -7,7 +7,9 @@ class Url {
         'contato' => array('ContactController','validForm'),
         'login' => array('LoginController','pageDefault'),
         'user-login' => array('LoginController','userLogin'),
-        'postAdd' => array('InitPageController','postAdd')
+        'postAdd' => array('InitPageController','postAdd'),
+        'postGroupAdd' => array('GroupsController','postAdd'),
+        'groups' => array('GroupsController','pageDefault')
 
     );
 
